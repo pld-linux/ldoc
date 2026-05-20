@@ -38,6 +38,8 @@ rm -rf $RPM_BUILD_ROOT
 	LUA_BINDIR=%{_bindir} \
 	LUA_SHAREDIR=%{_datadir}/lua/5.1
 
+%{__sed} -i -e 's,^lua ,lua5.1 ,' $RPM_BUILD_ROOT%{_bindir}/ldoc
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
